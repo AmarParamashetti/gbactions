@@ -22,4 +22,4 @@ jobs:
           python-version: 3.7
         
       - name : pyrunprog
-        run: ./python hello.py
+        run: python ./hello.py
