@@ -11,6 +11,6 @@ jobs:
  print_world:
   runs-on : windows-latest
   steps:
-   - run: java --version
+   - run: java -version
   
 
