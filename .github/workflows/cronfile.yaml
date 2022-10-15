@@ -1,14 +1,9 @@
 on:
   schedule:
-    - cron: '1 * * * *'
+    - cron: '2 * * * *'
 jobs:
-    printme:
-      runs-on: ubuntu-latest
-      steps:
-        - run : echo "Hello World from ubuntu one"
-    scanme:
-      runs-on : ubuntu-latest
-      steps:
-        - run : echo "Hello World from ubuntu two"
-    
+  printme:
+    runs-on: ubuntu-latest
+    steps:
+      - run : echo "Hello World from ubuntu one"
   
