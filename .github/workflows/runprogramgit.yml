@@ -17,7 +17,7 @@ jobs:
         run : go run ./main.go
         
       - name : setup my python
-        uses : actions/setup-python@4
+        uses : actions/setup-python@v4
         
       - name : pyrunprog
         run: ./python hello.py
