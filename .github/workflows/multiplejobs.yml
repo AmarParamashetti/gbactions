@@ -1,0 +1,11 @@
+on:
+  push:
+   branches:
+    - main
+ jobs:
+  myjob1:
+    runs-on: ubuntu-latest
+    run: echo 'job 1"
+  myjob2:
+    runs-on : ubuntu-latest
+    run : echo "job 2"
