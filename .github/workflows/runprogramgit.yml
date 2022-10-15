@@ -15,3 +15,6 @@ jobs:
          
       - name : mygoprg
         run : go run ./main.go
+        
+      - name : pyrunprog
+        run: python hello.py
