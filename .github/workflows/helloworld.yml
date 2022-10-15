@@ -8,4 +8,9 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - run: echo "Hello World From GITHUB ACTIONS Cron"
+ print_world:
+  runs-on : windows-latest
+  steps:
+   - run: ls -l
+  
 
