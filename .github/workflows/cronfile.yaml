@@ -1,9 +1,0 @@
-on:
-  schedule:
-    - cron: '2 * * * *'
-jobs:
-  printme:
-    runs-on: ubuntu-latest
-    steps:
-      - run : echo "Hello World from ubuntu one"
-  
