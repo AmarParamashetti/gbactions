@@ -1,11 +1,10 @@
 on:
- push:
-  branches:
-   - main
+ schedule:
+  - cron: '1 * * * *'
    
 jobs:
  print_hello:
   runs-on: ubuntu-latest
   steps:
-   - run: echo "Hello World From GITHUB ACTIONS"
+   - run: echo "Hello World From GITHUB ACTIONS Cron"
 
