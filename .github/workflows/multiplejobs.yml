@@ -2,10 +2,12 @@ on:
   push:
    branches:
     - main
- jobs:
+jobs:
   myjob1:
     runs-on: ubuntu-latest
-    run: echo 'job 1"
+    steps:
+      - run: echo 'job 1"
   myjob2:
     runs-on : ubuntu-latest
-    run : echo "job 2"
+    steps:
+      - run : echo "job 2"
