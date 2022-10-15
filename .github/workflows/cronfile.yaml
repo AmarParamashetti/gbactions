@@ -1,12 +1,11 @@
 on:
   schedule:
-  - cron: '1 * * * *'
-  jobs:
+    - cron: '1 * * * *'
+jobs:
     printme:
       runs-on: ubuntu-latest
       steps:
         - run : echo "Hello World from ubuntu one"
-   jobs:
     scanme:
       runs-on : ubuntu-latest
       steps:
