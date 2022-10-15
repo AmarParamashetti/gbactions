@@ -15,11 +15,7 @@ jobs:
          
       - name : mygoprg
         run : go run ./main.go
-        
-      - name : setup my python
-        uses : actions/setup-python@v3
-        with:
-          python-version: 3.7
+     
         
       - name : pyrunprog
         run: python ./hello.py
