@@ -4,7 +4,9 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    run : echo "job 1 is executed"
+    steps:
+      - run : echo "job 1 is executed"
   job2:
     runs-on: ubuntu-latest
-    run: echo "job 2 is executed"
+    steps:
+      - run: echo "job 2 is executed"
