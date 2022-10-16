@@ -1,12 +1,12 @@
 on:
-  push:
+  pull_request:
    branches:
     - main
 jobs:
   myjob1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'job 1"
+      - run: echo "job 1"
   myjob2:
     runs-on : ubuntu-latest
     steps:
