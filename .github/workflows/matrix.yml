@@ -7,6 +7,6 @@ jobs:
     strategy:
       matrix:
         versions: [11, latest]
-  steps:
     runs-on : ubuntu-{{matrix.version}}
-    run : echo "i am running on "{{matrix.version}}
+    steps :
+      - run : echo "i am running on "{{matrix.version}}
