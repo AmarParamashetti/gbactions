@@ -12,8 +12,12 @@ jobs:
     steps:
       - run: echo "job 2 is executed"
   jobs3:
-    needs: job2
     runs-on: ubuntu-latest
     steps:
-    - run: echo "job 3 is executed"
+      - run: exit 1
+  jobs4:
+    needs: jobs3
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "job 4 is not executed"
       
