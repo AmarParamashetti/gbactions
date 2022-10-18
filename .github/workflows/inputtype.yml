@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environments:
+        description: 'Define the env variable'
+        required: true
+        default: 'prod'
+ jobs:
+  inputtype:
+    runs-on: ubuntu-latest
+    steps:
+       - run: echo "Env :" ${{github.event.inputs.environment}}
