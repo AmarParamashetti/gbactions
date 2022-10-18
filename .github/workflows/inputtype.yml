@@ -9,4 +9,4 @@ jobs:
   inputtype:
     runs-on: ubuntu-latest
     steps:
-       - run: echo "Env :" ${{ github.event.inputs.environment }}
+       - run: echo "Env :" ${{ github.event.inputs.environments }}
