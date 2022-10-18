@@ -5,7 +5,7 @@ on:
         description: 'Define the env variable'
         required: true
         default: 'prod'
- jobs:
+jobs:
   inputtype:
     runs-on: ubuntu-latest
     steps:
