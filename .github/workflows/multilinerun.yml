@@ -10,3 +10,5 @@ jobs:
     steps: 
      - run: |
          ${{ github.event.inputs.env }}
+         python -verison
+         pytest
