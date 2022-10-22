@@ -3,7 +3,7 @@ on:
     inputs:
       env:
         description : "Enter pip install"
-        default: "python -v"
+        default: "python3 --version"
 jobs:
   inputtype:
     runs-on: ubuntu-latest
