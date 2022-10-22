@@ -1,0 +1,9 @@
+on:
+  workflow_dispatch:
+  env:
+   - description : "Enter pip install"
+   default: "python -v"
+jobs:
+  steps: 
+    - run: |
+      node -v
