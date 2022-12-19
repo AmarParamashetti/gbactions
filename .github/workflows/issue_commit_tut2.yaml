@@ -14,7 +14,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          issue-number: ${{(github.event.issue.number)}}
+          issue-number: ${{(github.event.issue.number)}} #here the issue.number is the json response structure , git.event is from the github actions
           body: |
             This is a multi-line test comment
             - With GitHub **Markdown** :sparkles:
@@ -22,3 +22,19 @@ jobs:
 
             [1]: https://github.com/peter-evans/create-or-update-comment
           reactions: heart
+          
+  github_api_call:
+    runs-on : ubuntu-latest
+    steps:
+      - name: gihutb api curl command for comment
+        run : |
+              http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comment\
+              -f body =‘
+              Comment from the APIs
+              ’
+        env:
+          GITHUB_TOKEN : ${{secrets.GITHUB_TOKEN}}
+          ORGANIZATION : ${{github.event.organization.login}}
+          REPOSITORY : ${{github.event.repository.name}}
+          ISSUE_NUMBER : ${{github.event.issue.number}}
+          
