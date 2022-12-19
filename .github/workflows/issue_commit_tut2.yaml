@@ -1,0 +1,13 @@
+name: issue commit
+
+on:
+  issues:
+    types:
+      [opened]
+jobs:
+  github_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: using community api
+        run : echo '${{(github.event)}}'
+        shell : bash
