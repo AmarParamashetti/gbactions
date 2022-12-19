@@ -30,7 +30,7 @@ jobs:
         run : |
             gh api -X POST \
             http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
-            --body=‘
+            -body=‘
              GB actions from the APIs
              ’
         env:
