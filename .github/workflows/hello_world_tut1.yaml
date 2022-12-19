@@ -13,10 +13,10 @@ jobs:
       - name : helloworld
         run: echo "hellow world from tutorial v2"
         shell: bash
-   ByeBye:
+  ByeBye:
       runs-on: ubuntu-latest
       steps:
         - name: byebye run
-        run: echo "bye bye job will run fast since it does not use any third party actions like the above job does"
+          run: echo "bye bye job will run fast since it does not use any third party actions like the above job does"
       
     
