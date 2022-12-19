@@ -1,9 +1,10 @@
 name : Hello World from tutorial
 
 on:
-  push:
+  pull:
     branches :
       - main
+
 jobs:
   Hello_World:
     runs-on: ubuntu-latest
