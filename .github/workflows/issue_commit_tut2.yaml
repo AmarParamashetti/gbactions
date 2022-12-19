@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: using community api
-        run : echo '${{(github.event)}}'
+        run : echo '${{toJSON(github.event)}}'
         shell : bash
