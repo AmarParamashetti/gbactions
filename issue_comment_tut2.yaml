@@ -1,4 +1,4 @@
-name: issue comment on using plugin and github apis
+name: issue commit
 
 on:
   issues:
@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: using community api
-        runs : echo '${{(github.event)}}'
+        run : echo '${{(github.event)}}'
         shell : bash
