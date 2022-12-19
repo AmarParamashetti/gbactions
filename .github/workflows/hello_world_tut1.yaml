@@ -1,7 +1,7 @@
 name : Hello World from tutorial
 
 on:
-  pull:
+  pull_request:
     branches :
       - main
 
