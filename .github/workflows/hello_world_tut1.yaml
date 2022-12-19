@@ -1,0 +1,22 @@
+name : Hello World from tutorial
+
+on:
+  push:
+    branches :
+      - main
+jobs:
+  Hello_World:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2 #this is not mandatory since it uses pre-defined actions from community such as github.com/actions/checkout 
+        # here instead of v2 we can use the commit id also
+      - name : helloworld
+        run: echo "hellow world from tutorial v2"
+        shell: bash
+   ByeBye:
+      runs-on: ubuntu-latest
+      steps:
+        - name: byebye run
+        run: echo "bye bye job will run fast since it does not use any third party actions like the above job does"
+      
+    
