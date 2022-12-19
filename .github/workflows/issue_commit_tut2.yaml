@@ -28,7 +28,8 @@ jobs:
     steps:
       - name: gihutb api curl command for comment
         run : |
-              http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comment\
+              gh api -X POST \
+              http://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comment \
               -f body =‘
               Comment from the APIs
               ’
