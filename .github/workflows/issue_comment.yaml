@@ -1,0 +1,13 @@
+name: issue comment on using plugin and github apis
+
+on:
+  issues:
+    types:
+      [opened]
+jobs:
+  github_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: using community api
+        runs : echo '${{(github.event)}}'
+        shell : bash
