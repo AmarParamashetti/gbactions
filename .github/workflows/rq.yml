@@ -1,6 +1,8 @@
 name: Deploy to Cloud Run
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   APP_ID: continous-deployment
