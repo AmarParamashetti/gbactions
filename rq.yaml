@@ -1,3 +1,0 @@
-name : rq
-on:
-  workflow_dispatch
