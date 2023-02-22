@@ -15,7 +15,7 @@ jobs:
       contents : read
     env:
       IMAGE_NAME: rqservice
-      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      PROJECT_ID: default-demo-app-e16ba
 
     steps:
       - name : checkout
