@@ -33,6 +33,9 @@ jobs:
 
       - name : Configure Docker Client
         run :  gcloud auth configure-docker --quiet
+        
+      - name : Configure Docker CR
+        run :  gcloud auth configure-docker gcr.io
 
       - name : Push Docker Image to Google Cloud Run (GCR)
         run : docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GITHUB_SHA
