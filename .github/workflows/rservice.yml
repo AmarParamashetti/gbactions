@@ -1,4 +1,4 @@
-name: Build and Push RQ Service to Google Cloud Run
+name: GCP Build and Push RQ Service to Google Cloud Run
 on:
   workflow_dispatch:
     inputs :
