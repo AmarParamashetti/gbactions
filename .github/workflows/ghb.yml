@@ -1,0 +1,43 @@
+name: GAUTH GUILD
+on:
+  workflow_dispatch:
+    inputs :
+      region:
+        description: 'region to deploy'
+        required: true
+        default: 'us-east1'
+jobs:
+  build-push-deploy:
+    name : Build the docker image
+    runs-on : ubuntu-latest
+    permissions:
+      id-token: write
+      contents : read
+    env:
+      IMAGE_NAME: rqservice
+      PROJECT_ID: default-demo-app-e16ba
+
+    steps:
+      - name : checkout
+        uses : actions/checkout@v3
+  
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'ghub-250@default-demo-app-e16ba.iam.gserviceaccount.com'
+      
+      - name: set account
+        run:  gcloud config set account 'aparamashetti@gmail.com' 
+     
+      - name : Build Docker Image
+        run : docker build -t gcr.io/$PROJECT_ID/$IMAGE_NAME:$GITHUB_SHA .
+
+      - name : Configure Docker Client
+        run :  gcloud auth configure-docker --quiet
+        
+      - name : Configure Docker CR
+        run :  gcloud auth configure-docker gcr.io
+
+      - name : Push Docker Image to Google Cloud Run (GCR)
+        run :  docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GITHUB_SHA
