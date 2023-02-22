@@ -21,12 +21,12 @@ jobs:
       - name : checkout
         uses : actions/checkout@v3
   
-      - name : Authenticate to Google Cloud
-        uses: google-github-actions/auth@v1
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
         with:
-          service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
-          project_id: ${{ env.PROJECT_ID }}
-          export_default_credentials: true
+          workload_identity_provider: 'projects/260223033332/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'ghub-250@default-demo-app-e16ba.iam.gserviceaccount.com'
       
       - name: Use gcloud CLI
         run:  gcloud info
