@@ -8,4 +8,4 @@ COPY . /rq
 RUN pip install fastapi uvicorn
 WORKDIR /rq
 
-CMD ["uvicorn", "testimg:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "testimg:app", "--host", "0.0.0.0", "--port", "8080"]
