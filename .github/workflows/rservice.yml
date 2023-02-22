@@ -20,7 +20,7 @@ jobs:
     steps:
       - name : checkout
         uses : actions/checkout@v3
-
+  
       - name : Authenticate to Google Cloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
         with:
@@ -28,6 +28,9 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
           project_id: ${{ env.PROJECT_ID }}
       
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+        
       - name : key
         run : echo ${{ env.GCP_SA_KEY_JSON }}
 
