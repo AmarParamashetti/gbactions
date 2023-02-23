@@ -18,14 +18,14 @@ module "gh_oidc" {
   }
 }
 
-resource "google_storage_bucket" "i18n_backend_bucket" {
-  name                        = "CRBucket"
+resource "google_storage_bucket" rq_backend_bucket" {
+  name                        = "rqtfkCRBucket"
   location                    = "us-east1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
   cors {
     origin          = ["*"]
-    method          = ["GET"]
+    method          = ["*"]
     max_age_seconds = 3600
   }
   versioning {
