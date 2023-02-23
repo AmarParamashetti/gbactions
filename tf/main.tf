@@ -35,10 +35,6 @@ data "google_iam_policy" "noauth" {
 
 output "name" {
   value = google_cloud_run_service_iam_policy.run_all_users.service
-}
-output "prj" {
   prjc = google_cloud_run_service_iam_policy.run_all_users.project
-}
-output "lc" {
-  lcn = google_cloud_run_service_iam_policy.run_all_users.location
+   lcn = google_cloud_run_service_iam_policy.run_all_users.location
 }
