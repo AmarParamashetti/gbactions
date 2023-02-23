@@ -3,8 +3,8 @@ resource "google_project_service" "run_api" {
   disable_on_destroy = true
 }
 
-resource "google_cloud_run_service" "mydockerimage" {
-  name     = "cloudrun-srv"
+resource "google_cloud_run_service" "cloudruntf" {
+  name     = "cloudrun-img"
   location = "us-east1"
   template {
     spec {
@@ -22,9 +22,9 @@ resource "google_cloud_run_service" "mydockerimage" {
 }
 
 resource "google_cloud_run_service_iam_policy" "run_all_users" {
-  location = google_cloud_run_service.mydockerimage.location
-  project = google_cloud_run_service.mydockerimage.project
-  service  = google_cloud_run_service.mydockerimage.name
+  location = google_cloud_run_service.cloudruntf.location
+  project = google_cloud_run_service.cloudruntf.project
+  service  = google_cloud_run_service.cloudruntf.name
   
   policy_data = data.google_iam_policy.noauth.policy_data
 }
