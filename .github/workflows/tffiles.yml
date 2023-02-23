@@ -68,5 +68,5 @@ jobs:
         
       - name: Deploy image to Google Cloud Run
         run: |-
-         gcloud run deploy "$GCR_SERVICE" --image="gcr.io/default-demo-app-e16ba/rqservice:fb7c0d8428a95429b8894b99c3c9e94233271296" --port=8080 --region="us-east" --platform=managed --allow-unauthenticated --verbosity=$GCP_VERBOSITY --project=$PROJECT_ID --quiet
+         gcloud run deploy "$GCR_SERVICE" --image="gcr.io/default-demo-app-e16ba/rqservice:fb7c0d8428a95429b8894b99c3c9e94233271296" --port=8080 --region="us-east1" --platform=managed --allow-unauthenticated --verbosity=$GCP_VERBOSITY --project=$PROJECT_ID --quiet
 
