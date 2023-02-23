@@ -1,13 +1,11 @@
 resource "google_project_service" "run_api" {
   service = "run.googleapis.com"
-
   disable_on_destroy = true
 }
 
 resource "google_cloud_run_service" "mydockerimage" {
   name     = "cloudrun-srv"
   location = "us-east1"
-
   template {
     spec {
       containers {
@@ -23,9 +21,19 @@ resource "google_cloud_run_service" "mydockerimage" {
    depends_on = [google_project_service.run_api]
 }
 
-resource "google_cloud_run_service_iam_member" "run_all_users" {
-  service  = google_cloud_run_service.mydockerimage.name
+resource "google_cloud_run_service_iam_policy" "run_all_users" {
   location = google_cloud_run_service.mydockerimage.location
-  role     = "roles/run.invoker"
-  member   = "allUsers"
+  project = google_cloud_run_service.mydockerimage.project
+  service  = google_cloud_run_service.mydockerimage.name
+  
+  policy_data = data.google_iam_policy.noauth.policy_data
+}
+
+data "google_iam_policy" "noauth" {
+  binding {
+    role = "roles/run.invoker"
+    members = [
+      "allUsers",
+    ]
+  }
 }
