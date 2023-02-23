@@ -1,6 +1,6 @@
 resource "google_service_account" "sa" {
   project    = "default-demo-app-e16ba"
-  account_id = "ghub-250@default-demo-app-e16ba.iam.gserviceaccount.com"
+  account_id = "ghub-25"
 }
 
 resource "google_project_iam_member" "project" {
