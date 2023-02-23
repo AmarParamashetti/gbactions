@@ -1,5 +1,5 @@
 module "gh_oidc" {
-  source      = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc"
+  source      = "terraform-google-modules/github-actions-runners/google//modules/gh-oidc?ref=v3.1.0"
   project_id  = "default-demo-app-e16ba"
   pool_id     = "my-pools"
   provider_id = "my-providers"
