@@ -1,4 +1,5 @@
 resource "google_cloud_run_service" "cloudruntf" {
+  provider = google-beta
   name     = "cloudrun-img"
   location = "us-east1"
   template {
