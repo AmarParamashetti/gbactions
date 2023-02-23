@@ -32,9 +32,3 @@ data "google_iam_policy" "noauth" {
     ]
   }
 }
-
-output "name" {
-  value = google_cloud_run_service_iam_policy.run_all_users.service
-  prjc = google_cloud_run_service_iam_policy.run_all_users.project
-   lcn = google_cloud_run_service_iam_policy.run_all_users.location
-}
