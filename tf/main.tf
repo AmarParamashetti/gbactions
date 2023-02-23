@@ -1,13 +1,3 @@
-resource "google_service_account" "sa" {
-  project    = "default-demo-app-e16ba"
-  account_id = "ghub-25"
-}
-
-resource "google_project_iam_member" "project" {
-  project = "default-demo-app-e16ba"
-  role    = "roles/storage.admin"
-  member  = "serviceAccount:${google_service_account.sa.email}"
-}
 
 module "gh_oidc" {
   source      = "github.com/terraform-google-modules/terraform-google-github-actions-runners.git//modules/gh-oidc?ref=v3.1.0"
@@ -22,7 +12,7 @@ module "gh_oidc" {
     "attribute.sub"              = "assertion.sub"
   }
   sa_mapping = {
-    "google_service_account.sa.account_id" = {
+    "my_service_account" = {
       sa_name   = "projects/default-demo-app-e16ba/serviceAccounts/ghub-250@default-demo-app-e16ba.iam.gserviceaccount.com"
       attribute = "attribute.repository/AmarParamashetti/gbactions"
     }
