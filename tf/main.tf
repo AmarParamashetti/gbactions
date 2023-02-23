@@ -5,13 +5,13 @@ resource "google_cloud_run_service" "mydockerimage" {
   template {
     spec {
       containers {
-        image = "gcr.io/default-demo-app-e16ba/rqservice:ee8329a3349f7268611999ea873aa82d36d41076"
+        image = "gcr.io/default-demo-app-e16ba/rqservice:fb7c0d8428a95429b8894b99c3c9e94233271296"
       }
     }
   }
 
   traffic {
-    percent         = 100
+    percent = 100
     latest_revision = true
   }
 }
