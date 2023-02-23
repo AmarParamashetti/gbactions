@@ -20,7 +20,7 @@ module "gh_oidc" {
 
 resource "google_storage_bucket" "i18n_backend_bucket" {
   name                        = "CRBucket"
-  location                    = us-east1
+  location                    = "us-east1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
   cors {
