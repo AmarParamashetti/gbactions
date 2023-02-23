@@ -20,6 +20,9 @@ jobs:
     env:
       IMAGE_NAME: rqservice
       PROJECT_ID: default-demo-app-e16ba
+      GCP_VERBOSITY: warning
+      GCP_REGION: us-central1
+      GCR_SERVICE: tutum-hello-world
 
     steps:
       - name : checkout
@@ -63,7 +66,7 @@ jobs:
         id: plan
         run: terraform plan -no-color
         
-      - name: Terraform apply
-        id: apply
-        run: terraform apply -auto-approve
+      - name: Deploy image to Google Cloud Run
+        run: |-
+         gcloud run deploy "$GCR_SERVICE" --image="gcr.io/default-demo-app-e16ba/rqservice:fb7c0d8428a95429b8894b99c3c9e94233271296" --port=8080 --region="us-east" --platform=managed --allow-unauthenticated --verbosity=$GCP_VERBOSITY --project=$PROJECT_ID --quiet
 
