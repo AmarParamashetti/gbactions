@@ -29,7 +29,7 @@ module "gh_oidc" {
   }
 }
 
-resource "google_storage_bucket" rq_backend_bucket" {
+resource "google_storage_bucket" "rq_backend_bucket" {
   name                        = "rqtfkCRBucket"
   location                    = "us-east1"
   uniform_bucket_level_access = true
