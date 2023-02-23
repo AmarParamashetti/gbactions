@@ -20,7 +20,7 @@ module "gh_oidc" {
 }
 
 resource "google_storage_bucket" "rq_backend_bucket" {
-  name                        = "rqtfkCRBucket"
+  name                        = "rqttfkbuck"
   location                    = "us-east1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
