@@ -13,7 +13,6 @@ resource "google_cloud_run_service" "cloudruntf" {
     percent = 100
     latest_revision = true
   }
-   depends_on = [google_project_service.run_api]
 }
 
 resource "google_cloud_run_service_iam_policy" "run_all_users" {
