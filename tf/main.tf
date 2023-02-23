@@ -24,8 +24,8 @@ resource "google_cloud_run_service" "mydockerimage" {
 }
 
 resource "google_cloud_run_service_iam_member" "run_all_users" {
-  service  = google_cloud_run_service.run_service.name
-  location = google_cloud_run_service.run_service.location
+  service  = google_cloud_run_service.mydockerimage.name
+  location = google_cloud_run_service.mydockerimage.location
   role     = "roles/run.invoker"
   member   = "allUsers"
 }
