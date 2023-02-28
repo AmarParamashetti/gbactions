@@ -11,5 +11,5 @@ jobs:
   runs-on : windows-latest
   steps:
    - run: |
-      touch tf/rqttkfbucket.txt
+      touch {{ github.workspace }}/tf/rqttkfbucket.txt
       java -version
