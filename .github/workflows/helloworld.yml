@@ -11,5 +11,5 @@ jobs:
   runs-on : windows-latest
   steps:
    - run: |
-      cat tf/rqttkfbucket.txt
+      touch tf/rqttkfbucket.txt
       java -version
