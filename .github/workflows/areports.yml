@@ -30,7 +30,7 @@ jobs:
         run: |
           git checkout -B gh-pages
           poetry run pytest -v -s -m hello --alluredir=allure-report/
-          poetry pytest allure generate ./allure-report -o ./allure-results
+          poetry allure generate ./allure-report -o ./allure-results
           echo ${{ github.repository }}
           git config --global user.email "no-reply@github.com"
           git config --global user.name "GitHub Actions"
