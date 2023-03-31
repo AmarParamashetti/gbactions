@@ -30,7 +30,6 @@ jobs:
         run: |
           git checkout -B gh-pages
           poetry run pytest -v -s -m hello --alluredir=allure-report/
-          touch ${{ github.repository }}/gh-pages/allure-report/myfiles.txt
           echo ${{ github.repository }}
           git config --global user.email "no-reply@github.com"
           git config --global user.name "GitHub Actions"
@@ -38,13 +37,7 @@ jobs:
           git commit -m "update me"
           git push
           cd allure-report/
-          ls
-          
-      - name: Install packages
-        run : |
-             cd allure-results
-             ls
-             
+          ls         
 
           
   
