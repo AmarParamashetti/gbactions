@@ -1,0 +1,11 @@
+[tool.poetry]
+name = "python_tests"
+version = "0.1.0"
+description = ""
+authors = ["Amar"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.23.0"
+exrex = "^0.10.5"
+pytest = "^6.2.5"
