@@ -36,7 +36,7 @@ jobs:
             git push origin gh-pages
             git fetch
             git checkout main
-            git branch -D gh_pages
+            git push origin --delete gh_pages
 
      
   
