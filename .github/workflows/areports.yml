@@ -27,14 +27,14 @@ jobs:
       
       - name: Run tests on all env
         continue-on-error: true
-        env:
-          SRC_FOLDER_PATH: './allure-report'
-          TARGET_BRANCH: 'gh-pages'
         run: |
           poetry run pytest -v -s -m hello --alluredir=${{ github.repository }}/gh-pages/allure-report/
           echo ${{ github.repository }}
           git config --global user.email "no-reply@github.com"
           git config --global user.name "GitHub Actions"
+          git checkout gh-pages
+          git add allure-report/
+          git commit -m "uodate me"
           cd ${{ github.repository }}/gh-pages/allure-report/
           ls
           
