@@ -35,7 +35,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add allure-report/
           git commit -m "update me"
-          git push
+          git push origin gh-pages
           cd allure-report/
           ls         
 
