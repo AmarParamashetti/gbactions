@@ -33,12 +33,7 @@ jobs:
       - name: Install packages
         run : |
              mkdir ./testfolder
-             cd allure-report
-             ls -l
-          
-      - name : allure report
-        continue-on-error: true
-        run: |
-         poetry allure serve allure-report
+             poetry allure serve allure-report
+
           
   
