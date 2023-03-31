@@ -35,7 +35,7 @@ jobs:
             git commit -m "update me"
             git push origin gh-pages
             git fetch
-            git checkout master
+            git checkout main
             git branch -D gh_pages
 
      
