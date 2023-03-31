@@ -1,0 +1,27 @@
+
+name: PIP Allure report Test
+on:
+  workflow_dispatch:
+  
+jobs:
+  build-push-deploy:
+    name : Pytest
+    runs-on : ubuntu-latest
+    
+    steps:
+      - run: |
+          sudo apt-get update
+          sudo apt-get install allure
+          allure --version
+          
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+          
+      - run: |
+            pip3 install pytest
+            pip3 install pytest-allure
+
+     
+  
