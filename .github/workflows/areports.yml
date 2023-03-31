@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add allure-report
           git commit -m "Update blog.json"
-          git push origin ${{ github.repository }}/gh-pages
+          git push origin gh-pages
           cd allure-report
           ls
           
