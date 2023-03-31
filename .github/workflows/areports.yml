@@ -28,5 +28,5 @@ jobs:
       - name: Run tests on all env
         continue-on-error: true
         run: |
-          poetry run pytest -v -s -m 
+          poetry run pytest -v -s -m hello
   
