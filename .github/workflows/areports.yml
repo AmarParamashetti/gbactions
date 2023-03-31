@@ -25,7 +25,7 @@ jobs:
       - name: cache venv
         uses: actions/cache@v2
         with:
-          path: ./.venv
+          path: .venv
           key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - run: poetry install
