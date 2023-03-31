@@ -29,10 +29,8 @@ jobs:
         continue-on-error: true
         run: |
           poetry run pytest -v -s -m hello --alluredir=./allure-report/
-          allure --version
           cd allure-report
           ls
-          poetry run allure generate ./allure-report -o ./allure-results
           
       - name: Install packages
         run : |
