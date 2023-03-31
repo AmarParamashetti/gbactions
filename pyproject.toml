@@ -6,6 +6,5 @@ authors = ["Amar"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-requests = "^2.23.0"
-exrex = "^0.10.5"
+allure-pytest = "^2.9.45"
 pytest = "^6.2.5"
