@@ -35,7 +35,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git fetch
           git checkout gh-pages
-          git add allure-report/
+          git add -A
           git commit -m "uodate me"
           cd ${{ github.repository }}/gh-pages/allure-report/
           ls
