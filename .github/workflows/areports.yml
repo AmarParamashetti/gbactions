@@ -29,11 +29,13 @@ jobs:
         continue-on-error: true
         run: |
           poetry run pytest -v -s -m hello --alluredir=./allure-report/
+          poetry allure serve allure-report
           
       - name: Install packages
         run : |
-             mkdir ./testfolder
-             poetry allure serve allure-report
+             cd allure-report
+             ls
+             
 
           
   
