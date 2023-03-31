@@ -20,7 +20,7 @@ jobs:
           
       - run: |
             pip3 install pytest
-            pip3 install pytest-allure
+            pip3 install allure-pytest
 
      
   
