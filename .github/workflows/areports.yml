@@ -31,17 +31,12 @@ jobs:
           SRC_FOLDER_PATH: './allure-report'
           TARGET_BRANCH: 'gh-pages'
         run: |
-          poetry run pytest -v -s -m hello --alluredir=./allure-report/
+          poetry run pytest -v -s -m hello --alluredir=${{ github.repository }}/gh-pages/allure-report/
           echo ${{ github.repository }}
           git config --global user.email "no-reply@github.com"
           git config --global user.name "GitHub Actions"
-          
-          git fetch                         # fetch branches
-          git checkout $TARGET_BRANCH       # checkout to your branch
-          git checkout ${GITHUB_REF##*/} -- $files # copy files from the source branch
-          git add -A
-          git diff-index --quiet HEAD ||  git commit -am "deploy files"  # commit to the repository (ignore if no modification)
-          git push origin $TARGET_BRANCH # push to remote branch
+          git commit -m "added files"
+          git push
           cd allure-report
           ls
           
