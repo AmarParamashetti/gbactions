@@ -1,0 +1,42 @@
+
+name: PIP Allure report Test
+on:
+  workflow_dispatch:
+  
+jobs:
+  build-push-deploy:
+    name : Pytest
+    runs-on : ubuntu-latest
+    
+    steps:
+      - run: |
+          sudo apt-get update
+          sudo apt-get install allure
+          allure --version
+          
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+          
+      - run: |
+            pip3 install pytest
+            pip3 install pytest-allure
+
+      - name: Run tests on all env
+        continue-on-error: true
+        run: |
+          git checkout -B gh-pages
+          poetry run pytest -v -s -m hello --alluredir=allure-report/
+          allure generate ./allure-report -o ./allure-results
+          echo ${{ github.repository }}
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "update me"
+          git push origin gh-pages
+          cd allure-report/
+          ls         
+
+          
+  
