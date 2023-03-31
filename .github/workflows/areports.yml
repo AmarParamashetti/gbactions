@@ -1,5 +1,5 @@
 
-name: GAUTH GUILD
+name: Allure report
 on:
   workflow_dispatch:
   
