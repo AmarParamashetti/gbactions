@@ -28,5 +28,11 @@ jobs:
       - name: Run tests on all env
         continue-on-error: true
         run: |
-          poetry run pytest -v -s -m hello
+          poetry run pytest -v -s -m hello --alluredir=allure-report
+          
+      - name : allure report
+        continue-on-error: true
+        run: |
+          allure serve allure-report
+          
   
