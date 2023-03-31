@@ -25,6 +25,12 @@ jobs:
 
       - run: poetry install
       
+      - name: Install packages
+        run: pip install build &&
+             python -m build allure-python-commons &&
+             python -m build allure-python-commons-test &&
+             pip install allure-python-commons*/dist/allure-python-commons*.tar.gz
+      
       - name: Run tests on all env
         continue-on-error: true
         run: |
