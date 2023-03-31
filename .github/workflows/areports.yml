@@ -33,6 +33,6 @@ jobs:
       - name : allure report
         continue-on-error: true
         run: |
-         poetry pytest allure serve allure-report
+         poetry allure serve allure-report
           
   
