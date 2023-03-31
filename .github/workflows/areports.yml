@@ -1,1 +1,19 @@
 
+name: GAUTH GUILD
+on:
+  workflow_dispatch:
+    inputs :
+      region:
+        description: 'region to deploy'
+        required: true
+        default: 'us-east1'
+jobs:
+  build-push-deploy:
+    name : Build the docker image
+    runs-on : ubuntu-latest
+    permissions:
+      contents : 'read'
+      id-token: 'write'
+    env:
+      IMAGE_NAME: rqservice
+      PROJECT_ID: default-demo-app-e16ba
