@@ -34,6 +34,7 @@ jobs:
             git add .
             git commit -m "update me"
             git push origin gh-pages
+            allure serve ./allure-results
 
      
   
