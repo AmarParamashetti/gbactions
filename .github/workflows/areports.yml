@@ -27,9 +27,8 @@ jobs:
       
       - name: Install packages
         run : |
-             python -m build allure-python-commons &&
-             python -m build allure-python-commons-test &&
-             pip install allure-python-commons*/dist/allure-python-commons*.tar.gz
+             mkdir ./testfolder
+             ls -l
       
       - name: Run tests on all env
         continue-on-error: true
