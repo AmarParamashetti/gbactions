@@ -26,8 +26,8 @@ jobs:
         continue-on-error: true
         run: |
             git checkout -B gh-pages
-            pytest -v -s -m hello --alluredir=allure-report/
-            allure generate ./allure-report -o ./allure-results
+            pytest -v -s -m hello --alluredir=./allure-report/
+            allure generate ./allure-report -c -o ./allure-results
             echo ${{ github.repository }}
             git config --global user.email "no-reply@github.com"
             git config --global user.name "GitHub Actions"
