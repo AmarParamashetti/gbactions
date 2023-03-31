@@ -12,8 +12,8 @@ jobs:
       POETRY_VIRTUALENVS_IN_PROJECT: true
     steps:
       - run: |
-          sudo apt-add-repository ppa:qameta/allure &&
-          sudo apt-get update &&
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
           sudo apt-get install allure
           
       - uses: actions/checkout@v3
