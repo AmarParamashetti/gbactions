@@ -1,5 +1,5 @@
 
-name: Allure report
+name: Allure report Test
 on:
   workflow_dispatch:
   
