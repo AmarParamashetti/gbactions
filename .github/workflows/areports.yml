@@ -28,7 +28,7 @@ jobs:
       - name: Run tests on all env
         continue-on-error: true
         env:
-          SRC_FOLDER_PATH: 'allure-report'
+          SRC_FOLDER_PATH: './allure-report'
           TARGET_BRANCH: 'gh-pages'
         run: |
           poetry run pytest -v -s -m hello --alluredir=./allure-report/
