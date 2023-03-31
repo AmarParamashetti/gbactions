@@ -36,6 +36,7 @@ jobs:
           git add allure-report/
           git commit -m "update me"
           git push origin gh-pages
+          pytest allure generate ./allure-report -o ./allure-results
           cd allure-report/
           ls         
 
