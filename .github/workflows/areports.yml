@@ -25,15 +25,16 @@ jobs:
 
       - run: poetry install
       
-      - name: Install packages
-        run : |
-             mkdir ./testfolder
-             ls -l
-      
       - name: Run tests on all env
         continue-on-error: true
         run: |
           poetry run pytest -v -s -m hello --alluredir=./allure-report/
+          
+      - name: Install packages
+        run : |
+             mkdir ./testfolder
+             cd allure-report
+             ls -l
           
       - name : allure report
         continue-on-error: true
