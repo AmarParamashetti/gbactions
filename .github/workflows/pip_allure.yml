@@ -53,12 +53,13 @@ jobs:
             echo ${{ github.repository }}
             git config --global user.email "no-reply@github.com"
             git config --global user.name "GitHub Actions"
+            echo '<!DOCTYPE html><html dir="ltr"><head><meta charset="utf-8"><title>Allure Report</title><link rel="favicon" href="favicon.ico?v=2"><link rel="stylesheet" type="text/css" href="styles.css"><link rel="stylesheet" href="plugins/screen-diff/styles.css"></head><body><div id="alert"></div><div id="content"><span class="spinner"><span class="spinner__circle"></span></span></div><div id="popup"></div><script src="app.js"></script><script src="plugins/behaviors/index.js"></script><script src="plugins/packages/index.js"></script><script src="plugins/screen-diff/index.js"></script></body></html>' > ./allure-results/${{ github.run_number }}/index2.html
             git add .
             git commit -m "${{github.run_number}} allure-report"
             git push origin gh-pages
             git fetch
             git checkout main
-            git push origin -d gh-pages
+            
             
 
   
