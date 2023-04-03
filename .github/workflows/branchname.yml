@@ -8,7 +8,9 @@ jobs:
     runs-on : macos-latest
     
     steps:
-      - run: |
-          echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
-          id: extract_branch
+      - name : get the branch name
+        id: extract_branch
+      - run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+
+      - name : name of branch
       - run : echo ${{ steps.extract_branch.outputs.branch }}    
