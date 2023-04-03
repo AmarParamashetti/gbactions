@@ -31,15 +31,15 @@ jobs:
         continue-on-error: true
         run: |
         
-            pytest -v -s -m hello --alluredir=./allure-report/${{ github.run_number }}/
-            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_number }}
+            pytest -v -s -m hello --alluredir=./allure-report/${{ github.run_id }}/
+            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}
             
       - name: Run tests on all env inventory adjustment
         continue-on-error: true
         run: |
 
-            pytest -v -s -m order --alluredir=./allure-report/${{ github.run_number }}/
-            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_number }}     
+            pytest -v -s -m order --alluredir=./allure-report/${{ github.run_id }}/
+            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}     
 
       - name : Commit the changes
         continue-on-error : true
