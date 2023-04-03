@@ -39,10 +39,14 @@ jobs:
   
       - name : get branch name
         id : branch_name
-        run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+        run: |
+          echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+          
+      - name : Branch Name
+        run : echo ${{ steps.branch_name.outputs.branch }}              
 
       - name : Commit the changes
-        if : ${{ steps.branch_name.outputs.branch =='gh-pages'}}
+        if : ${{ steps.branch_name.outputs.branch}} == 'gh-pages'
         run : |
             allure generate ./allure-report/${{ github.run_number }} -c -o ./allure-results/${{ github.run_number }}   
             echo ${{ github.repository }}
