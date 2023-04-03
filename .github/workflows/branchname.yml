@@ -9,5 +9,6 @@ jobs:
     
     steps:
       - run: |
-          run: echo "${GITHUB_REF})"
-          id: extract_branch 
+          echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+          id: extract_branch
+      - run : echo ${{ steps.extract_branch.outputs.branch }}    
