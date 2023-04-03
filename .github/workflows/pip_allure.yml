@@ -10,10 +10,9 @@ jobs:
     
     steps:
       - run: |
-         curl -o allure-2.7.0.tgz -Ls https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/allure-2.7.0.tgz
-          sudo tar -zxvf allure-2.7.0.tgz -C /opt/
-          sudo ln -s /opt/allure-2.7.0/bin/allure /usr/bin/allure
-          rm -rf allure-2.7.0.tgz
+          sudo apt-get install default-jre
+          wget https://github.com/allure-framework/allure2/releases/download/2.18.1/allure_2.18.1-1_all.deb
+          sudo dpkg -i allure_2.18.1-1_all.deb
           allure --version
           
       - uses: actions/checkout@v3
