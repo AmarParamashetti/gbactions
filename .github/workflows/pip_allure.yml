@@ -37,9 +37,12 @@ jobs:
         run: |
             pytest -v -s -m order --alluredir=./allure-report/${{ github.run_number }}/
   
+      - name : get branch name
+        run: echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+        id: myref
 
       - name : Commit the changes
-        if : ${GITHUB_REF##*/} == "gh-pages1"
+        if : ${{ steps.myref.outputs.branch }} == "gh-pages1"
         run : |
             allure generate ./allure-report/${{ github.run_number }} -c -o ./allure-results/${{ github.run_number }}   
             echo ${{ github.repository }}
