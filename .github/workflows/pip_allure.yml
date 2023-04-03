@@ -26,7 +26,7 @@ jobs:
         continue-on-error : true
         run: |
             git checkout -B gh-pages
-            git merge -f origin master
+            git merge origin master
     
       - name: Run tests on all env create order
         continue-on-error: true
