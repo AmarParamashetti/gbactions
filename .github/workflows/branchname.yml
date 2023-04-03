@@ -1,0 +1,14 @@
+name: Branch Name
+on:
+  workflow_dispatch:
+  
+jobs:
+  build-push-deploy:
+    name : Pytest
+    runs-on : macos-latest
+    
+    steps:
+      - run: |
+          shell: bash
+          run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
+          id: extract_branch 
