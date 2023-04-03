@@ -21,13 +21,29 @@ jobs:
       - run: |
             pip3 install pytest
             pip3 install allure-pytest
-    
-      - name: Run tests on all env
-        continue-on-error: true
+            
+      - name : checkout the branch
+        continue-on-error : true
         run: |
             git checkout -B gh-pages
+    
+      - name: Run tests on all env create order
+        continue-on-error: true
+        run: |
+        
             pytest -v -s -m hello --alluredir=./allure-report/${{ github.run_id }}/
             allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}
+            
+      - name: Run tests on all env inventory adjustment
+        continue-on-error: true
+        run: |
+
+            pytest -v -s -m order --alluredir=./allure-report/${{ github.run_id }}/
+            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}     
+
+      - name : Commit the changes
+        continue-on-error : true
+        run : |
             echo ${{ github.repository }}
             git config --global user.email "no-reply@github.com"
             git config --global user.name "GitHub Actions"
@@ -38,5 +54,4 @@ jobs:
             git checkout main
             git push origin -d gh-pages
 
-     
   
