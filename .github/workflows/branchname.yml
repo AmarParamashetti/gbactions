@@ -9,6 +9,5 @@ jobs:
     
     steps:
       - run: |
-          shell: bash
-          run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
+          run: echo "${GITHUB_REF})"
           id: extract_branch 
