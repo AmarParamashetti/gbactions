@@ -30,20 +30,18 @@ jobs:
       - name: Run tests on all env create order
         continue-on-error: true
         run: |
-        
-            pytest -v -s -m hello --alluredir=./allure-report/${{ github.run_id }}/
-            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}
+            pytest -v -s -m hello --alluredir=./allure-report/${{ github.run_number }}/
             
       - name: Run tests on all env inventory adjustment
         continue-on-error: true
         run: |
-
-            pytest -v -s -m order --alluredir=./allure-report/${{ github.run_id }}/
-            allure generate ./allure-report/${{ github.run_id }} -c -o ./allure-results/${{ github.run_id }}     
+            pytest -v -s -m order --alluredir=./allure-report/${{ github.run_number }}/
+  
 
       - name : Commit the changes
         continue-on-error : true
         run : |
+            allure generate ./allure-report/${{ github.run_number }} -c -o ./allure-results/${{ github.run_number }}   
             echo ${{ github.repository }}
             git config --global user.email "no-reply@github.com"
             git config --global user.name "GitHub Actions"
