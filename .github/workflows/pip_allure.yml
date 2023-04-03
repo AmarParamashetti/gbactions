@@ -50,8 +50,6 @@ jobs:
             git add .
             git commit -m "update me"
             git push origin gh-pages
-            git fetch
-            git checkout main
-            git push origin -d gh-pages
+            
 
   
