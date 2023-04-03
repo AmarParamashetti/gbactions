@@ -4,13 +4,14 @@ on:
   
 jobs:
   build-push-deploy:
-    name : Pytest
+    name : Branch name
     runs-on : macos-latest
     
     steps:
+      
       - name : get the branch name
         id: extract_branch
-      - run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+        run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
 
       - name : name of branch
-      - run : echo ${{ steps.extract_branch.outputs.branch }}    
+        run : echo ${{ steps.extract_branch.outputs.branch }}    
