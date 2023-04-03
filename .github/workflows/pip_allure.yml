@@ -39,7 +39,7 @@ jobs:
   
 
       - name : Commit the changes
-        continue-on-error : true
+        if : ${GITHUB_REF##*/} == "gh-pages1"
         run : |
             allure generate ./allure-report/${{ github.run_number }} -c -o ./allure-results/${{ github.run_number }}   
             echo ${{ github.repository }}
