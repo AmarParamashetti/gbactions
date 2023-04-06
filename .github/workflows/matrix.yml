@@ -9,4 +9,7 @@ jobs:
         version: [11, latest]
     runs-on : ubuntu-${{ matrix.version }}
     steps :
-      - run : echo "i am running on "${{ matrix.version }}
+      - run : |
+          echo "i am running on "${{ matrix.version }}
+          echo (date +%s)
+      
