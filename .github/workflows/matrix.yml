@@ -1,3 +1,4 @@
+name: Random Test
 on:
  workflow_dispatch:
  
@@ -10,5 +11,5 @@ jobs:
     steps :
       - run : |
           echo "i am running on "${{ matrix.version }}
-          echo (date +%s)
+          echo $(date +%s)
       
