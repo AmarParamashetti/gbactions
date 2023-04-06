@@ -12,4 +12,5 @@ jobs:
       - run : |
           echo "i am running on "${{ matrix.version }}
           echo $(date +%s)
+          echo ${RANDOM}
       
