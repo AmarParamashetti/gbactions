@@ -9,10 +9,10 @@ jobs:
         version: [11, latest]
     runs-on : ubuntu-${{ matrix.version }}
     env:
-      RANDOM_STR : $(date +%s)
+      RANDOM_STR : ${RANDOM}
     steps :
       - run : |
           echo "i am running on "${{ matrix.version }}
-          echo $RANDOM_STR
+          echo ${{RANDOM_STR}}
         
       
