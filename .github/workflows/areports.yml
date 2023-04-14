@@ -10,6 +10,7 @@ jobs:
     
     env:
       POETRY_VIRTUALENVS_IN_PROJECT: true
+      RAND_STR : ${RANDOM}
     steps:
       - run: |
           sudo apt-get update
@@ -34,8 +35,8 @@ jobs:
         continue-on-error: true
         run: |
           git checkout -B gh-pages
-          poetry run pytest -v -s -m hello --alluredir=allure-report/
-          allure generate ./allure-report -o ./allure-results
+          poetry run pytest -v -s -m hello --alluredir=allure-report-$RANDOM_STR/
+          allure generate ./allure-report-$RANDOM_STR -o ./allure-results--$RANDOM_STR
           echo ${{ github.repository }}
           git config --global user.email "no-reply@github.com"
           git config --global user.name "GitHub Actions"
