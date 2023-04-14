@@ -8,9 +8,11 @@ jobs:
       matrix:
         version: [11, latest]
     runs-on : ubuntu-${{ matrix.version }}
+    env:
+      RANDOM_STR : $(date +%s)
     steps :
       - run : |
           echo "i am running on "${{ matrix.version }}
-          echo $(date +%s)
-          echo ${RANDOM}
+          echo $RANDOM_STR
+        
       
