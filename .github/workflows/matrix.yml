@@ -6,7 +6,7 @@ jobs:
   multipleEnv_test:
     strategy:
       matrix:
-        version: [11, latest]
+        version: [latest]
     runs-on : ubuntu-${{ matrix.version }}
     env:
       RANDOM_STR : ${RANDOM}
