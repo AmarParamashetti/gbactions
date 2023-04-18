@@ -61,6 +61,7 @@ jobs:
             git push origin gh-pages-${{ github.run_number }}
             git fetch
             git checkout main
+            git push origin -d gh-pages-${{ github.run_number }}
             
             
 
