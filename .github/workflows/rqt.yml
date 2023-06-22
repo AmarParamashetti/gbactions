@@ -4,7 +4,7 @@ name: Trigger verify-deployment Action
 # then calls the verify-deployment action using the matrix.
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       rt-version:
         required: true
