@@ -14,10 +14,9 @@ on:
 jobs:
   set-rt-year:
     runs-on: ubuntu-latest  
-    outputs:
-      rtYear: ${{ steps.get-rt-year.outputs.train-year }}
+
     steps:
       - name: Set RT-Year
         id: get-rt-year
         run: |
-          echo "train-year=$(date +'%Y')" >> $GITHUB_OUTPUT
+          echo $(date +'%Y')
