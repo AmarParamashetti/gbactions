@@ -1,1 +1,23 @@
+name: Trigger verify-deployment Action
 
+# Reusable Workflow that builds the strategy matrix of clients,
+# then calls the verify-deployment action using the matrix.
+
+on:
+  workflow_call:
+    inputs:
+      rt-version:
+        required: true
+        type: string
+      
+
+jobs:
+  set-rt-year:
+    runs-on: ubuntu-latest  
+    outputs:
+      rtYear: ${{ steps.get-rt-year.outputs.train-year }}
+    steps:
+      - name: Set RT-Year
+        id: get-rt-year
+        run: |
+          echo "train-year=$(date +'%Y')" >> $GITHUB_OUTPUT
